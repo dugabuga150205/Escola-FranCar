@@ -1,0 +1,151 @@
+﻿<Window x:Class="Projeto_escola.Views.EscolaFormWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Projeto_escola.Views"
+        mc:Ignorable="d"
+        Title="EscolaFormWindow" Height="550" Width="900" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="150" />
+                <RowDefinition Height="250" />
+                <RowDefinition Height="80" />
+        </Grid.RowDefinitions>
+
+        <Label HorizontalAlignment="Center" VerticalAlignment="Center"  Content="Escola Cadastro" FontSize="30px"/>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="450" />
+                <ColumnDefinition Width="450" />
+            </Grid.ColumnDefinitions>
+            <StackPanel Margin="5 0 0 0">
+                <Label Content="Informações da Propridedade" FontSize="22px" FontStyle="Italic"  FontFamily="Arial"/>
+                <Label Content="Tipo" FontSize="16px" FontFamily="Arial"/>
+                <StackPanel Orientation="Horizontal">
+                    <RadioButton x:Name ="rdb_publico" Content="Público" />
+                    <RadioButton x:Name ="rdb_privado" Content="Privado" Margin="15 0"/>
+                </StackPanel>
+                <Label Content="Data de Criação" FontSize="16px" FontFamily="Arial" Margin="0 10"/>
+                <DatePicker x:Name="dp_data" Width="300"/>
+                <StackPanel Margin="0 10">
+                    <Label Content="Responsável" FontSize="22px" FontStyle="Italic"  FontFamily="Arial"/>
+                    <StackPanel Orientation="Horizontal">
+                        
+                        <Label Content="Nome" FontSize="16" FontFamily="Arial"/>
+                        <Label Content="Telefone" FontSize="16" FontFamily="Arial" Margin="170 0"/>
+                    </StackPanel>
+                    
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox x:Name="txt_nomeP" Width="200" FontSize="16"/>
+                        <TextBox x:Name="txt_telefoneP" Width="200" FontSize="16" Margin="30 0"/>
+                    </StackPanel>
+
+                </StackPanel>
+
+            </StackPanel>
+            <StackPanel Grid.Column="1" Margin="5 0 5 0">
+                <Label Content="Informações de Endereço e Contato" FontFamily="Arial" FontSize="22" FontStyle="Italic"/>
+
+                <StackPanel Orientation="Horizontal">
+
+                    <Label Content="Telefone" FontSize="16" FontFamily="Arial"/>
+                    <Label Content="E-mail" FontSize="16" FontFamily="Arial" Margin="160 0"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBox x:Name="txt_telefone" Width="200" FontSize="16"/>
+                    <TextBox x:Name="txt_email" Width="180" FontSize="16" Margin="30 0"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+
+                    <Label Content="Rua " FontSize="16" FontFamily="Arial"/>
+                    <Label Content="Número" FontSize="16" FontFamily="Arial" Margin="185 0"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBox x:Name="txt_rua" Width="200" FontSize="16"/>
+                    <TextBox x:Name="txt_numero" Width="180" FontSize="16" Margin="30 0"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+
+                    <Label Content="Bairro" FontSize="16" FontFamily="Arial"/>
+                    <Label Content="Cidade" FontSize="16" FontFamily="Arial" Margin="175 0"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBox x:Name="txt_Bairro" Width="200" FontSize="16"/>
+                    <TextBox x:Name="txt_cidade" Width="180" FontSize="16" Margin="30 0" />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="CEP" FontFamily="Arial" FontSize="16"/>
+                    <Label Content="Complemento" FontFamily="Arial" FontSize="16" Margin="100 0"/>
+                    <Label Content="Estado" FontFamily="Arial" FontSize="16" Margin=" -60 0"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBox x:Name="txt_cep" Width="100" FontSize="18"/>
+                    <TextBox x:Name="txt_complemento" Width="100" FontSize="18" Margin="47 0"/>
+                    <ComboBox Width="130" x:Name="cb_estado">
+                        <Label Content="Acre"/>
+                        <Label Content="Alagoas"/>
+                        <Label Content="Amapá"/>
+                        <Label Content="Amazonas"/>
+                        <Label Content="Bahia"/>
+                        <Label Content="Ceará"/>
+                        <Label Content="Distrito Federal"/>
+                        <Label Content="Espírito Santo"/>
+                        <Label Content="Goiás"/>
+                        <Label Content="Maranhão"/>
+                        <Label Content="Mato Grosso"/>
+                        <Label Content="Mato Grosso Sul"/>
+                        <Label Content="Minas Gerais"/>
+                        <Label Content="Pará"/>
+                        <Label Content="Paraibá"/>
+                        <Label Content="Paraná"/>
+                        <Label Content="Pernambuco"/>
+                        <Label Content="Piauí"/>
+                        <Label Content="Rio de Janeiro"/>
+                        <Label Content="Rio Grande do Norte"/>
+                        <Label Content="Rio Grande do Sul"/>
+                        <Label Content="Rondônia"/>
+                        <Label Content="Santa Catarina"/>
+                        <Label Content="São Paulo"/>
+                        <Label Content="Sergipe"/>
+                        <Label Content="Tocantins"/>
+                    </ComboBox>
+
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="450" />
+                <ColumnDefinition Width="450" />
+            </Grid.ColumnDefinitions>
+            <StackPanel Margin="5 0 0 0">
+                <Label Content="Informação" FontSize="22px" FontStyle="Italic"  FontFamily="Arial"/>
+                <Label Content="Nome" FontSize="16" FontFamily="Arial" />
+                <TextBox Name="txt_nome" FontSize="20" FontFamily="Arial" Width="350"/>
+                <Label Content="CPF" FontSize="16"  FontFamily="Arial" />
+                <TextBox Name="txt_cpf" FontSize="20" FontFamily="Arial" Width="350"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Margin="5 0 0 0">
+                <Label Content="" FontSize="22px" FontStyle="Italic"  FontFamily="Arial"/>
+                <Label Content="Razão Social" FontSize="16" FontFamily="Arial" />
+                <TextBox Name="txt_razao" FontSize="20" FontFamily="Arial" Width="350"/>
+                <Label Content="Inc.Estudantil" FontSize="16"  FontFamily="Arial" />
+                <TextBox Name="txt_inscricao" FontSize="20" FontFamily="Arial" Width="350"/>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="3">
+            <Button Content="Salvar" Height="40" Width="100" FontFamily="Arial" FontSize="20" HorizontalAlignment="Right" Margin="0 0 30 20" x:Name="bt_salvar" Click="bt_salvar_Click"/>
+        </Grid>
+    </Grid>
+</Window>

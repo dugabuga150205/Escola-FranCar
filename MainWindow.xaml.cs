@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Projeto_escola.Views;
 
 namespace Projeto_escola
 {
@@ -23,6 +24,8 @@ namespace Projeto_escola
         public MainWindow()
         {
             InitializeComponent();
+            EscolaFormWindow WindowForm = new EscolaFormWindow();
+            WindowForm.ShowDialog();
         }
     }
 }
