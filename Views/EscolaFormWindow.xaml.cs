@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MySql.Data.MySqlClient;
+using Projeto_escola.DataBase;
 
 namespace Projeto_escola.Views
 {
@@ -60,13 +61,13 @@ namespace Projeto_escola.Views
 
 
 
-            var conexao = new MySqlConnection("server=localhost;database=bd_escola;port=3360;user=root;password=root");
+            
 
             try 
 
-            { 
-                conexao.Open();
-                var comando = conexao.CreateCommand();
+            {
+                var conexao = new Conexao();
+                var comando = conexao.Query();
                 
                 comando.CommandText = "INSERT INTO escola values (null, @nome, @razao, @cnpj, @inscricao, @tipo, @data_criacao, @responsavel, @resp_tel, " +
                     "@email, @telefone, @rua, @numero, @bairro, @complemento, @cep, @cidade, @estado)";
