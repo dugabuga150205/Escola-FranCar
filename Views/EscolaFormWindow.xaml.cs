@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MySql.Data.MySqlClient;
 using Projeto_escola.DataBase;
+using Projeto_escola.Models;
 
 namespace Projeto_escola.Views
 {
@@ -21,6 +22,7 @@ namespace Projeto_escola.Views
     /// </summary>
     public partial class EscolaFormWindow : Window
     {
+        private Escola _escola = new Escola();   
         public EscolaFormWindow()
         {
             InitializeComponent();
@@ -35,9 +37,41 @@ namespace Projeto_escola.Views
 
         private void bt_salvar_Click(object sender, RoutedEventArgs e)
         {
-            string nomeFantasia = txt_nome.Text;
+            
+
+
+            _escola.NomeFantasia = txt_nome.Text;
+            _escola.RazaoSocial = txt_razao.Text;
+            _escola.Cnpj = txt_cnpj.Text;
+            _escola.InscricaoEst = txt_inscricao.Text;
+            _escola.DataCriacao = dp_data.DisplayDate;
+            _escola.Responsavel = txt_nomeP.Text;
+            _escola.ResponsavelTelefone = txt_telefoneP.Text;
+            _escola.Email = txt_email.Text;
+            _escola.Telefone = txt_telefone.Text;
+            _escola.Rua = txt_rua.Text;
+            _escola.Numero = txt_numero.Text;
+            _escola.Bairro = txt_Bairro.Text;
+            _escola.Complemento = txt_complemento.Text;
+            _escola.Cep = txt_cep.Text;
+            _escola.Cidade = txt_cidade.Text;
+            _escola.Estado = Convert.ToString(cb_estado.Text);
+             _escola.SetTipo((bool)rdb_publico.IsChecked);
+            
+            try
+            {
+                var dao = new EscolaDAO();
+                dao.Insert(_escola);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            //MessageBox.Show(_escola.Estado);
+            /*string nomeFantasia = txt_nome.Text;
             string razao = txt_razao.Text;
-            string cpf = txt_cpf.Text;  
+            string cnpj = txt_cnpj.Text;  
             string inscricao = txt_inscricao.Text;
             string tipo = "Privado";
             
@@ -57,13 +91,14 @@ namespace Projeto_escola.Views
             string cep = txt_cep.Text;
             string cidade = txt_cidade.Text;
             string estado = Convert.ToString(cb_estado.Text);
-
+            */
 
 
 
             
 
-            try 
+            /*
+             * try 
 
             {
                 var conexao = new Conexao();
@@ -72,8 +107,8 @@ namespace Projeto_escola.Views
                 comando.CommandText = "INSERT INTO escola values (null, @nome, @razao, @cnpj, @inscricao, @tipo, @data_criacao, @responsavel, @resp_tel, " +
                     "@email, @telefone, @rua, @numero, @bairro, @complemento, @cep, @cidade, @estado)";
                
-                comando.Parameters.AddWithValue("@nome", nomeFantasia );
-                comando.Parameters.AddWithValue("@razao", razao);
+                comando.Parameters.AddWithValue("@nome", _escola.NomeFantasia );
+                comando.Parameters.AddWithValue("@razao", _escola.RazaoSocial);
                 comando.Parameters.AddWithValue("@cnpj", cpf);
                 comando.Parameters.AddWithValue("@inscricao", inscricao);
                 comando.Parameters.AddWithValue("@tipo", tipo);
@@ -100,7 +135,7 @@ namespace Projeto_escola.Views
             catch (Exception ex) 
             {
                 MessageBox.Show(ex.Message); 
-            }
+            }*/
 
             //DUDU 45 DE BRAÇO
         }

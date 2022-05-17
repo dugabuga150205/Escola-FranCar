@@ -133,8 +133,8 @@
                 <Label Content="Informação" FontSize="22px" FontStyle="Italic"  FontFamily="Arial"/>
                 <Label Content="Nome" FontSize="16" FontFamily="Arial" />
                 <TextBox Name="txt_nome" FontSize="20" FontFamily="Arial" Width="350"/>
-                <Label Content="CPF" FontSize="16"  FontFamily="Arial" />
-                <TextBox Name="txt_cpf" FontSize="20" FontFamily="Arial" Width="350"/>
+                <Label Content="CNPJ" FontSize="16"  FontFamily="Arial" />
+                <TextBox Name="txt_cnpj" FontSize="20" FontFamily="Arial" Width="350"/>
             </StackPanel>
             <StackPanel Grid.Column="1" Margin="5 0 0 0">
                 <Label Content="" FontSize="22px" FontStyle="Italic"  FontFamily="Arial"/>
